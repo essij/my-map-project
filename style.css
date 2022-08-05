@@ -1,0 +1,162 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px): 
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights:
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+
+---02 COLORS
+
+- Primary:
+- Tints:
+- Shades:
+- Accents: 
+- Greys: 
+
+--- 03 WHITE SPACE
+
+- Spacing system (px): 
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /*1 rem = 16px -> 50 rem = 800px (if default 16px) */
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 */
+  /*Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #05668d;
+  height: 9.6rem;
+  padding: 0 2.4rem;
+  margin-bottom: 2.4rem;
+  position: relative;
+  color: #cdfaf0;
+}
+
+/******************************/
+/*BUTTIONS                    */
+/******************************/
+
+.button {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 0.8rem 3.2rem;
+  border-radius: 9px;
+  background-color: #02c39a;
+  color: #cdfaf0;
+
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /*Put transition on original "state"*/
+  /*transition: all 1s; */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+}
+
+.button:hover,
+.button:active {
+  background-color: #018669;
+  color: #fefefe;
+}
+
+.button-help,
+.button-modal-close {
+  background-color: #6ccbf0;
+}
+
+.button-help:hover,
+.button-help:active,
+.button-modal-close:hover,
+.button-modal-close:active {
+  background-color: #4a8aa3;
+  color: #fefefe;
+}
+
+/******************************/
+/*MAP                         */
+/******************************/
+
+/******************************/
+/*MODALS                      */
+/******************************/
+
+.modal {
+  /*Hidden by default*/
+  display: none;
+  position: fixed;
+  /* On top */
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* Enable scroll */
+  overflow: auto;
+  /* Fallback color */
+  background-color: rgb(0, 0, 0);
+  /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  color: #4a8aa3;
+  position: fixed;
+  width: 50rem;
+  height: 50rem;
+  bottom: 10rem;
+  right: 10rem;
+  border: 1px solid #4a8aa3;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 9px;
+}
+
+.modal-content-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2.4rem;
+  margin-bottom: 2.4rem;
+}

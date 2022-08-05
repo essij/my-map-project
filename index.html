@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My map project</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>My map</h1>
+      <div class="main-nav">
+        <button type="button" id="button-open-form" class="button">
+          Insert information
+        </button>
+        <button type="button" id="button-open-comments" class="button">
+          Show the list
+        </button>
+        <button type="button" id="button-open-help" class="button button-help">
+          Help
+        </button>
+      </div>
+    </header>
+
+    <!-- The form -->
+    <div id="modal-form" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Insert information</h3>
+          <button type="button" class="button button-modal-close">
+            &times;
+          </button>
+        </div>
+        <form class="modal-content-form">
+          <!--           <p id="current-latitude"></p>
+          <p id="current-longitude"></p> -->
+          <label for="address-input">Address</label>
+          <input
+            type="text"
+            class="textField"
+            id="address-input"
+            minlength="1"
+            maxlength="50"
+            placeholder="Streetadress 1 a 2"
+            required
+          />
+          <label for="comment-input">Comments</label>
+          <input
+            type="text"
+            class="textField"
+            id="comment-input"
+            minlength="1"
+            maxlength="50"
+            placeholder="Write here"
+            required
+          />
+          <label for="email-input">E-mail address</label>
+          <input
+            type="text"
+            class="textField"
+            id="email-input"
+            maxlength="100"
+            placeholder="email@email.com"
+          />
+        </form>
+        <div>
+          <button type="button" id="button-send" class="button">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thank you -->
+    <div id="modal-thank-you" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Thank you!</h3>
+          <button type="button" class="button-modal-close">&times;</button>
+        </div>
+        <p>We'll be in touch.</p>
+      </div>
+    </div>
+
+    <!-- Help window -->
+    <div id="modal-help" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Help</h3>
+          <button type="button" class="button-modal-close">&times;</button>
+        </div>
+        <p>Fill in the required fields.</p>
+        <p>Click "send"</p>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Change api key to "YOUR_KEY" -->
+    <script src="script.js"></script>
+    <script src="map.js"></script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=initMap"
+    ></script>
+  </body>
+</html>
